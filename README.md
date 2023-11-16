@@ -12,7 +12,31 @@ This application allows users to manage a collection of links to various apps. U
 
 ### Installation
 
+
+
 #### Clone the Repository
 ```bash
-git clone [Your Repository URL]
-cd [repository-name]
+git clone https://github.com/Nasseralqutaim/AppHub
+cd AppHub
+```
+#### Install Dependencies
+```bash
+bundle install
+```
+### Create and migrate the database
+```rails db:create```
+```rails db:migrate```
+
+### If using pre-loaded data
+```cp db/preloaded_database.sqlite3 db/development.sqlite3```
+
+### Alternatively, if populating data via seeds
+```rails db:seed```
+
+
+### Running the Application
+```rails server```
+
+
+
+
