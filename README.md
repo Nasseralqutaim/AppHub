@@ -1,24 +1,18 @@
-# README
+# Programming Task for Software Engineer role at (GLBRC)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This application allows users to manage a collection of links to various apps. Users can log in, view a default set of apps, add new ones, and remove them as needed. The project is built with Ruby on Rails and uses a SQLite database.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+### Prerequisites
+- Ruby
+- Rails
+- SQLite (Ensure it is installed on your system)
 
-* System dependencies
+### Installation
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Clone the Repository
+```bash
+git clone [Your Repository URL]
+cd [repository-name]
