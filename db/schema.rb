@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_16_002215) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_16_002749) do
   create_table "apps", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_002215) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_apps", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "app_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["app_id"], name: "index_user_apps_on_app_id"
+    t.index ["user_id"], name: "index_user_apps_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "login"
     t.string "password_digest"
@@ -28,4 +37,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_16_002215) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_apps", "apps"
+  add_foreign_key "user_apps", "users"
 end
