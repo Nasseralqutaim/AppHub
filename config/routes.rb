@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post "/sessions" => "sessions#create" #create session
   get "/login", to: "sessions#new", as: :login #Display login form 
-
+  get '/home', to: 'users#home' # Display user's home page after login
 
 
 
