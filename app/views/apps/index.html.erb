@@ -1,0 +1,9 @@
+<%= form_with url: '/user_apps', method: :post do |form| %>
+  <% @available_apps.each do |app| %>
+    <div>
+      <%= check_box_tag "app_ids[]", app.id %>
+      <%= label_tag "app_#{app.id}", app.name %>
+    </div>
+  <% end %>
+  <%= submit_tag "Add Selected Apps" %>
+<% end %>
