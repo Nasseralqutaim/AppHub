@@ -1,0 +1,12 @@
+<div>
+  <h2>Your Apps:</h2>
+  <% @user_apps.each do |user_app| %>
+    <div class="app-item">
+      <a href="<%= user_app.app.link %>" class="app-link">
+        <div class="app-shape"></div>
+      </a>
+      <h3><%= user_app.app.name %></h3>
+      <p><%= user_app.app.description %></p>
+     
+    </div>
+  <% end %>
