@@ -10,6 +10,12 @@ class SessionsController < ApplicationController
         Rails.application.credentials.fetch(:secret_key_base), # the secret key
         "HS256" # the encryption algorithm
       )
+      if user.user_apps.empty?
+        default_apps = App.where(default_status: true)
+        default_apps.each do |app|
+          UserApp.create(user_id: user.id, app_id: app.id)
+        end
+      end
   
       redirect_to '/home'
     else
