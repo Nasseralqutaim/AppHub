@@ -10,4 +10,10 @@ class UserAppsController < ApplicationController
     redirect_to '/home', flash: { notice: 'Apps added successfully.' }
   end
   
+ # DELETE /user_apps/:id
+ def destroy
+  @user_app = UserApp.find(params[:id])
+  @user_app.destroy
+  redirect_to '/home', notice: 'App removed successfully.'
+end 
 end
