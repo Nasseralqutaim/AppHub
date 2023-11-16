@@ -7,7 +7,7 @@
       </a>
       <h3><%= user_app.app.name %></h3>
       <p><%= user_app.app.description %></p>
-     
+      <%= button_to 'Remove App', user_app_path(user_app.id), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 </div>
