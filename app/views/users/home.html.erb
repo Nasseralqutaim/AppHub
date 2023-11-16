@@ -1,15 +1,15 @@
 <div>
   <h2>Your Apps:</h2>
-  <% @user_apps.each do |user_app| %>
-    <div class="app-item">
-      <a href="<%= user_app.app.link %>" class="app-link" style="background-color: <%= user_app.app.color %>;">
-        <div class="app-shape"></div>
-      </a>
-      <h3><%= user_app.app.name %></h3>
-      <p><%= user_app.app.description %></p>
-      <%= button_to 'Remove App', user_app_path(user_app.id), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
+ <% @user_apps.each do |user_app| %>
+  <div class="app-item">
+    <a href="<%= user_app.app.link %>" class="app-link" style="background-color: <%= user_app.app.color %>;">
+      <div class="app-shape <%= user_app.app.shape %>"></div>
+    </a>
+    <h3><%= user_app.app.name %></h3>
+    <p><%= user_app.app.description %></p>
+    <%= button_to 'Remove App', user_app_path(user_app.id), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
 </div>
 ...
 
@@ -48,4 +48,12 @@
     background-color: inherit; /* Inherits color from the parent link */
     border-radius: 50%; /* This makes it a circle, remove for a square */
   }
+
+  .shape-circle {
+  border-radius: 50%; /* Circle shape */
+}
+
+.shape-square {
+  border-radius: 0; /* Square shape */
+}
 </style>
