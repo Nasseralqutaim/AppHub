@@ -6,8 +6,8 @@ class UserAppsController < ApplicationController
     app_ids = params[:app_ids] 
     app_ids.each do |app_id|
       UserApp.create(user_id: user.id, app_id: app_id)
-    end
-    redirect_to '/home', flash: { notice: 'Apps added successfully.' }
+      flash[:notice] = 'Apps added successfully.'
+      redirect_to '/home'
   end
  # DELETE /user_apps/:id
  def destroy
