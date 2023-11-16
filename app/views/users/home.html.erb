@@ -2,7 +2,7 @@
   <h2>Your Apps:</h2>
   <% @user_apps.each do |user_app| %>
     <div class="app-item">
-      <a href="<%= user_app.app.link %>" class="app-link">
+      <a href="<%= user_app.app.link %>" class="app-link" style="background-color: <%= user_app.app.color %>;">
         <div class="app-shape"></div>
       </a>
       <h3><%= user_app.app.name %></h3>
@@ -10,3 +10,29 @@
      
     </div>
   <% end %>
+</div>
+
+
+
+
+
+<style>
+  .app-item {
+    margin-bottom: 10px;
+  }
+
+  .app-link {
+    display: inline-block;
+    width: 50px; /* Size of the shape */
+    height: 50px; /* Size of the shape */
+    margin-right: 10px;
+    text-decoration: none;
+  }
+
+  .app-shape {
+    width: 100%;
+    height: 100%;
+    background-color: inherit; /* Inherits color from the parent link */
+    border-radius: 50%; /* This makes it a circle, remove for a square */
+  }
+</style>
