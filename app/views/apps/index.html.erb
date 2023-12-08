@@ -1,4 +1,5 @@
 <%= form_with url: '/user_apps', method: :post do |form| %>
+
   <% @available_apps.each do |app| %>
     <div>
       <%= check_box_tag "app_ids[]", app.id %>
@@ -7,3 +8,5 @@
   <% end %>
   <%= submit_tag "Add Selected Apps" %>
 <% end %>
+
+<%# this ERB template is used to create a form with a list of checkboxes, each representing an available app. The user can select multiple apps and submit them. Upon submission, the form data (specifically, the selected app IDs) is posted to the /user_apps URL, which will be processed by the create action of the UserAppsController to associate the selected apps with the user. %>
